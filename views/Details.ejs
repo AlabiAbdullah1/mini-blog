@@ -1,0 +1,39 @@
+<html lang="en">
+  <%-include('./partials/head.ejs') %>
+
+  <body>
+    <% include('./partials/nav.ejs') %>
+
+    <div class="details-content">
+      <h2><%= blog.title %></h2>
+      <div class="content">
+        <p style="font-size: 20px; text-transform: capitalize;"><%=blog.body %></p>
+      </div>
+    </div>
+    <div id="delete">
+    <button class="delete-button" data-id="<%= blog._id %>">Delete Blog</button>
+    </div>
+
+    <script>
+     const btn =document.querySelector('button');
+
+     btn.addEventListener('click', async(e)=>{
+      if(e.target.classList.contains('delete-button')){
+        const id= e.target.getAttribute('data-id');
+        try {
+          const del = await fetch(`/deleteblog/${id}`, {
+            method:'DELETE'
+          })
+          // console.log(data._id)
+          location.assign('/blogs')
+        } catch (error) {
+          alert(error)
+        }
+      }
+
+     })
+    </script>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

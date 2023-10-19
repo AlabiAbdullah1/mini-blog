@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+li,a,button{
+    font-family: "montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ecf0f1;
+    text-decoration: none;
+    cursor: pointer;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+img{
+    height: 200;
+    width: 100;
+}
+.logo{
+    cursor: pointer;
+}
+.navlinks{
+    list-style: none;
+}
+.navlinks li{
+    display: inline-block;
+
+    padding: 0px 20px;
+}
+.navlinks li a{
+    transition: all 0.3s ease 0s;
+}
+.navlinks li a:hover{
+    color: blue;
+}
+button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 11);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+}
+button:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.single{
+    display: block;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 6px solid crimson;
+}
+
+.info{
+    color: red;
+    animation-name: slideIn;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+}
+
+
+
+
+@keyframes slideIn {
+    from{
+        transform: translateX(0%);
+    }
+    75%{
+        transform: translateX(20%);
+    }
+    95%{
+        transform: translateX()
+    }
+    to{
+        transform: translateX(10%);
+    }
+ }
